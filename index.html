@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watch3 | 大阪市内の高級時計買取専門店 | 最高額保証</title>
+    <meta name="description" content="大阪市内の高級時計買取専門店watch3。新規開店キャンペーン実施中。ロレックス、パテックフィリップ、オーデマピゲなど高級時計の買取実績多数。査定無料・最短即日現金化。">
+    <meta name="keywords" content="高級時計買取,ロレックス買取,パテックフィリップ買取,大阪,時計査定,即日買取">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #b59410;
+            --text-light: #e2e8f0;
+            --text-dark: #0f172a;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-light);
+            background-color: #0a0a0a;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1547996160-81dfa63595aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .gold-text {
+            color: var(--accent);
+        }
+        
+        .gold-border {
+            border-color: var(--accent);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 20%;
+        }
+        
+        .watch-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .watch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(181, 148, 16, 0.2);
+        }
+        
+        .fixed-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            transform: translateY(100%);
+            animation: slideUp 0.5s forwards;
+            animation-delay: 2s;
+        }
+        
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        .btn-gold {
+            background-color: var(--accent);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: #d4ae24;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(181, 148, 16, 0.4);
+        }
+        
+        .tick-animation {
+            animation: tick 1s infinite linear;
+        }
+        
+        @keyframes tick {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                rgba(255, 255, 255, 0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .ticking-clock {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--text-light);
+            margin: 0 auto;
+        }
+
+        .clock-hand {
+            position: absolute;
+            background-color: var(--primary);
+            transform-origin: bottom center;
+            top: 15%;
+            left: 49%;
+            width: 2px;
+            border-radius: 1px;
+        }
+
+        .hour-hand {
+            height: 8px;
+            animation: rotate 43200s linear infinite; /* 12 hours */
+        }
+
+        .minute-hand {
+            height: 12px;
+            animation: rotate 3600s linear infinite; /* 60 minutes */
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Adding some high-end watch elements */
+        .luxury-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 2rem auto;
+            width: 80%;
+        }
+
+        .testimonial-card {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            font-size: 80px;
+            color: rgba(181, 148, 16, 0.1);
+            font-family: 'Playfair Display', serif;
+            z-index: -1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-title:after {
+                width: 80%;
+                left: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ファーストビュー (First View) -->
+    <header class="hero-bg min-h-screen flex items-center relative">
+        <div class="container mx-auto px-4 py-24 text-center" data-aos="fade-up">
+            <div class="mb-4 inline-block">
+                <div class="ticking-clock">
+                    <div class="clock-hand hour-hand"></div>
+                    <div class="clock-hand minute-hand"></div>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl mb-4 gold-text font-bold">watch<span class="text-white">3</span></h1>
+            <p class="text-xl md:text-2xl mb-8">大阪市内の高級時計買取専門店</p>
+            <h2 class="text-3xl md:text-5xl mb-6">あなたの<span class="gold-text">時を刻んだ時計</span>に<br>最高の<span class="gold-text">価値</span>をつけます</h2>
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto">ロレックス、パテックフィリップ、オーデマピゲなど、<br>あらゆる高級時計を最高額で買取いたします。</p>
+            <div class="mt-8">
+                <a href="#contact" class="btn-gold font-bold py-4 px-8 rounded-full text-lg inline-block">無料査定を依頼する</a>
+                <p class="mt-4 text-sm opacity-80">※査定は完全無料・来店予約で<span class="gold-text">最大10%UP</span></p>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+            <a href="#campaign" class="text-white animate-bounce block">
+                <span class="sr-only">スクロールダウン</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- キャンペーン案内 (Campaign Information) -->
+    <section id="campaign" class="gradient-bg py-20">
+        <div class="container mx-auto px-4">
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 shimmer" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl text-center mb-8 section-title gold-text">新規開店記念キャンペーン</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div class="text-center p-6">
+                        <div class="text-5xl gold-text font-bold mb-2">買取金額</div>
+                        <div class="text-6xl md:text-8xl font-black gold-text mb-4">+10<span class="text-4xl">%</span></div>
+                        <p class="text-lg">通常査定額から更に10%上乗せ</p>
+                        <p class="text-sm mt-2 opacity-70">※一部ブランド除く</p>
+                    </div>
+                    <div class="hidden md:block h-40 w-px bg-gray-700 mx-8"></div>
+                    <div class="md:hidden my-8 h-px w-40 bg-gray-700 mx-auto"></div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl text-white font-bold mb-4">期間限定</div>
+                        <div class="text-2xl mb-4">2023年12月31日まで</div>
+                        <p class="text-lg mb-8">残り <span class="gold-text font-bold">30</span> 日</p>
+                        <a href="#contact" class="btn-gold font-bold py-3 px-8 rounded-full inline-block">今すぐ予約する</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 高額買取ができる3つの理由 (3 Reasons for High Price Purchases) -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center mb-16 section-title" data-aos="fade-up">高額買取ができる<span class="gold-text">3つの理由</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-900 rounded-lg p-8 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -right-4 -top-4 bg-black p-4 rounded-full opacity-10 text-6xl">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="bg-black inline-block p-4 rounded-full mb-6 gold-border border-2">
+                            <i class="fas fa-handshake gold-text text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl mb-4 gold-text">直接取引</h3>
+                        <p class="text-gray-300">中間業者を介さない直接取引により、お客様に高額査定をお約束します。他店より必ず高く買い取ります。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-lg p-8 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -right-4 -top-4 bg-black p-4 rounded-full opacity-10 text-6xl">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="bg-black inline-block p-4 rounded-full mb-6 gold-border border-2">
+                            <i class="fas fa-certificate gold-text text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl mb-4 gold-text">専門鑑定士</h3>
+                        <p class="text-gray-300">スイス時計技術者連盟認定の鑑定士が在籍。正確な価値査定と高額買取を実現しています。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-lg p-8 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute -right-4 -top-4 bg-black p-4 rounded-full opacity-10 text-6xl">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="bg-black inline-block p-4 rounded-full mb-6 gold-border border-2">
+                            <i class="fas fa-globe-asia gold-text text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl mb-4 gold-text">国際販売網</h3>
+                        <p class="text-gray-300">世界30カ国以上の販売ネットワークにより、国際市場価格に基づいた高額査定が可能になっています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新規開店キャンペーン (New Store Opening Campaign) -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center mb-12 section-title" data-aos="fade-up">新規開店<span class="gold-text">キャンペーン</span></h2>
+            
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="flex flex-col items-center justify-center p-6 border border-gray-800 rounded-lg">
+                        <div class="text-2xl mb-4">ご成約特典</div>
+                        <div class="text-4xl gold-text font-bold mb-6">高級グルメギフト</div>
+                        <p class="text-center mb-6">ご成約いただいたお客様全員に<br>高級グルメカタログギフト<br>（10,000円相当）をプレゼント</p>
+                        <div class="mt-4 w-36 h-36 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400">
+                            <i class="fas fa-gift text-5xl"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col items-center justify-center p-6 border border-gray-800 rounded-lg">
+                        <div class="text-2xl mb-4">来店予約特典</div>
+                        <div class="text-4xl gold-text font-bold mb-6">査定額+5%UP</div>
+                        <p class="text-center mb-6">WEBから来店予約された方限定<br>通常査定額から更に5%UP<br>※他キャンペーンとの併用可能</p>
+                        <a href="#contact" class="btn-gold font-bold py-3 px-8 rounded-full inline-block mt-4">来店予約をする</a>
+                    </div>
+                </div>
+                
+                <div class="mt-12 p-6 border border-gray-800 rounded-lg text-center" data-aos="fade-up">
+                    <div class="text-2xl mb-4">期間限定</div>
+                    <div class="text-4xl gold-text font-bold mb-6">ブランドウォッチ10%増額キャンペーン</div>
+                    <p class="text-center mb-6">ロレックス、パテックフィリップ、オーデマピゲ、ヴァシュロン・コンスタンタン対象<br>通常査定額から更に10%UP</p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="p-4 bg-gray-900 rounded-lg">
+                            <div class="serif text-lg gold-text">ROLEX</div>
+                        </div>
+                        <div class="p-4 bg-gray-900 rounded-lg">
+                            <div class="serif text-lg gold-text">PATEK PHILIPPE</div>
+                        </div>
+                        <div class="p-4 bg-gray-900 rounded-lg">
+                            <div class="serif text-lg gold-text">AUDEMARS PIGUET</div>
+                        </div>
+                        <div class="p-4 bg-gray-900 rounded-lg">
+                            <div class="serif text-lg gold-text">VACHERON CONSTANTIN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CVポイント (Conversion Points) -->
+    <section id="contact" class="py-20 bg-black relative">
+        <div class="absolute inset-0 opacity-10">
+            <div class="h-full w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl text-center mb-12 section-title" data-aos="fade-up"><span class="gold-text">無料査定</span>の流れ</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-900 p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6 gold-border border-2">
+                        <span class="text-2xl gold-text">01</span>
+                    </div>
+                    <h3 class="text-xl mb-4">カンタン予約</h3>
+                    <p class="text-gray-300 mb-4">WEBフォームまたはお電話にて査定のご予約をお願いします。</p>
+                    <div class="mt-4">
+                        <a href="#form" class="text-sm underline gold-text hover:text-white">Web予約で査定額UP</a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6 gold-border border-2">
+                        <span class="text-2xl gold-text">02</span>
+                    </div>
+                    <h3 class="text-xl mb-4">プロによる査定</h3>
+                    <p class="text-gray-300 mb-4">経験豊富な専門鑑定士が、お持ちいただいた時計を丁寧に査定します。</p>
+                    <div class="mt-4">
+                        <span class="text-sm gold-text">最短15分で査定完了</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6 gold-border border-2">
+                        <span class="text-2xl gold-text">03</span>
+                    </div>
+                    <h3 class="text-xl mb-4">その場で現金化</h3>
+                    <p class="text-gray-300 mb-4">ご納得いただけましたら、その場で現金にてお支払いいたします。</p>
+                    <div class="mt-4">
+                        <span class="text-sm gold-text">最大10億円までお支払い可能</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="bg-gray-900 p-8 rounded-lg" id="form">
+                    <h3 class="text-2xl text-center mb-8 gold-text">無料査定フォーム</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="name">お名前</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="phone">電話番号</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="email">メールアドレス</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="watch">ブランド・モデル名</label>
+                            <input type="text" id="watch" class="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500" placeholder="例：ロレックス デイトナ">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="date">ご希望の来店日時</label>
+                            <input type="text" id="date" class="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500" placeholder="例：12月10日 14時頃">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="message">ご質問・ご要望</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-gold font-bold py-4 px-10 rounded-full text-lg inline-block">査定予約を送信する</button>
+                            <p class="mt-4 text-sm opacity-70">※ご入力いただいた個人情報は、査定・買取以外の目的には使用いたしません。</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 時計の買取実績 (Watch Purchase Results) -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center mb-12 section-title" data-aos="fade-up">高級時計<span class="gold-text">買取実績</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="watch-card bg-gray-900 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center">
+                        <i class="fas fa-watch text-gray-600 text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-400 mb-2">ROLEX</div>
+                        <h3 class="text-xl mb-2">デイトナ 116500LN</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-sm opacity-70">買取価格</div>
+                                <div class="text-2xl gold-text font-bold">¥4,800,000</div>
+                            </div>
+                            <div class="bg-black px-4 py-2 rounded-full text-xs">
+                                新品同様
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="watch-card bg-gray-900 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center">
+                        <i class="fas fa-watch text-gray-600 text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-400 mb-2">PATEK PHILIPPE</div>
+                        <h3 class="text-xl mb-2">ノーチラス 5711/1A-010</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-sm opacity-70">買取価格</div>
+                                <div class="text-2xl gold-text font-bold">¥12,500,000</div>
+                            </div>
+                            <div class="bg-black px-4 py-2 rounded-full text-xs">
+                                中古美品
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="watch-card bg-gray-900 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center">
+                        <i class="fas fa-watch text-gray-600 text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-400 mb-2">AUDEMARS PIGUET</div>
+                        <h3 class="text-xl mb-2">ロイヤルオーク 15400ST</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-sm opacity-70">買取価格</div>
+                                <div class="text-2xl gold-text font-bold">¥5,200,000</div>
+                            </div>
+                            <div class="bg-black px-4 py-2 rounded-full text-xs">
+                                付属品完備
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-gray-900 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="serif text-lg mb-2">OMEGA</div>
+                    <div class="text-sm mb-2">スピードマスター</div>
+                    <div class="text-lg gold-text font-bold">¥380,000～</div>
+                </div>
+                
+                <div class="bg-gray-900 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="serif text-lg mb-2">CARTIER</div>
+                    <div class="text-sm mb-2">サントス</div>
+                    <div class="text-lg gold-text font-bold">¥420,000～</div>
+                </div>
+                
+                <div class="bg-gray-900 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="serif text-lg mb-2">IWC</div>
+                    <div class="text-sm mb-2">ポルトギーゼ</div>
+                    <div class="text-lg gold-text font-bold">¥650,000～</div>
+                </div>
+                
+                <div class="bg-gray-900 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="serif text-lg mb-2">PANERAI</div>
+                    <div class="text-sm mb-2">ルミノール</div>
+                    <div class="text-lg gold-text font-bold">¥480,000～</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#contact" class="btn-gold font-bold py-3 px-8 rounded-full inline-block">あなたの時計も査定する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 査定満足度/お客様の声 (Customer Satisfaction / Testimonials) -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center mb-6 section-title" data-aos="fade-up">査定<span class="gold-text">満足度</span></h2>
+            
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="text-7xl gold-text font-bold inline-block">98.7<span class="text-3xl">%</span></div>
+                <p class="mt-4 text-lg">2023年10月実施・お客様アンケート調べ（n=156）</p>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl text-center mb-10 section-title" data-aos="fade-up">お客様の声</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-900 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="ml-auto text-sm opacity-70">大阪市 K.S様</div>
+                    </div>
+                    <p class="text-gray-300 mb-4">他店で査定してもらった時計を持っていきましたが、予想以上の高価買取で大変満足しています。スタッフの方の対応も丁寧で安心して取引できました。</p>
+                    <div class="text-xs opacity-70">買取品：ロレックス エクスプローラーⅠ</div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-900 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="ml-auto text-sm opacity-70">京都市 T.M様</div>
+                    </div>
+                    <p class="text-gray-300 mb-4">祖父から譲り受けた古い時計でしたが、想像以上の高値で買い取っていただきました。査定プロセスも詳しく説明してくれて勉強になりました。</p>
+                    <div class="text-xs opacity-70">買取品：パテックフィリップ カラトラバ</div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-900 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="ml-auto text-sm opacity-70">神戸市 H.N様</div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Web予約で来店したので査定額アップの特典が適用され、とてもお得に買取してもらえました。スタッフの知識も豊富で信頼できます。</p>
+                    <div class="text-xs opacity-70">買取品：オメガ スピードマスター</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- watch3が選ばれる理由 (Why Choose watch3) -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center mb-12 section-title" data-aos="fade-up"><span class="gold-text">watch3</span>が選ばれる理由</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="bg-black bg-opacity-50 p-8 rounded-lg h-full">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-black p-4 rounded-full mr-4 gold-border border">
+                                <i class="fas fa-trophy gold-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl mb-4 gold-text">業界トップクラスの買取価格</h3>
+                                <p class="text-gray-300">直接取引と国際販売網により、業界最高クラスの買取価格を実現。他店より高い価格で買取ることをお約束します。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="bg-black p-4 rounded-full mr-4 gold-border border">
+                                <i class="fas fa-shield-alt gold-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl mb-4 gold-text">安心の保証体制</h3>
+                                <p class="text-gray-300">全ての取引は書面で記録し、買取後のトラブルにも迅速に対応。万が一の場合の返金保証制度もご用意しています。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-black p-4 rounded-full mr-4 gold-border border">
+                                <i class="fas fa-user-tie gold-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl mb-4 gold-text">専門知識豊富なスタッフ</h3>
+                                <p class="text-gray-300">国内外の認定資格を持つ時計鑑定士が、お客様の大切な時計を適正に評価。経験豊富なスタッフが丁寧に対応します。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-black bg-opacity-50 p-8 rounded-lg h-full">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-black p-4 rounded-full mr-4 gold-border border">
+                                <i class="fas fa-store gold-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl mb-4 gold-text">高級感あふれる店舗環境</h3>
+                                <p class="text-gray-300">大阪市内の一等地に位置する当店は、プライバシーに配慮した完全個室での対応。落ち着いた雰囲気の中で査定を行います。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="bg-black p-4 rounded-full mr-4 gold-border border">
+                                <i class="fas fa-bolt gold-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl mb-4 gold-text">スピード査定・即日現金化</h3>
+                                <p class="text-gray-300">最短15分での査定完了、その場で現金でのお支払いが可能。お急ぎの方でも安心してご利用いただけます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-black p-4 rounded-full mr-4 gold-border border">
+                                <i class="fas fa-heart gold-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl mb-4 gold-text">アフターサポート</h3>
+                                <p class="text-gray-300">買取後も時計に関するご相談を承ります。次の時計購入のアドバイスやメンテナンス情報など、時計愛好家としてのお付き合いを大切にしています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="luxury-divider my-16"></div>
+            
+            <div class="text-center" data-aos="fade-up">
+                <h3 class="text-2xl mb-6 gold-text">高級時計専門バイヤーによる<br class="md:hidden">無料出張査定も実施中</h3>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">遠方にお住まいの方や、店舗へお越しいただくのが難しい方向けに、<br class="hidden md:block">ご自宅や指定場所への出張査定サービスも行っております。</p>
+                <a href="#contact" class="btn-gold font-bold py-3 px-8 rounded-full inline-block">出張査定を依頼する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 固定バナー (Fixed Banner) -->
+    <div class="fixed-banner bg-black bg-opacity-90 p-4 border-t border-gray-800">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="text-3xl gold-text font-bold mr-4">watch3</div>
+                <div>
+                    <div class="text-sm">大阪市内の高級時計買取専門店</div>
+                    <div class="gold-text">新規開店キャンペーン実施中</div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="text-center md:text-right mr-0 md:mr-6 mb-4 md:mb-0">
+                    <div class="text-sm">お電話でのお問い合わせ</div>
+                    <div class="text-xl gold-text">0120-XXX-XXX</div>
+                    <div class="text-xs">営業時間: 10:00〜19:00（年中無休）</div>
+                </div>
+                <a href="#contact" class="btn-gold font-bold py-2 px-6 rounded-full inline-block whitespace-nowrap">無料査定を依頼</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター (Footer) -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-2xl gold-text mb-6">watch3</h3>
+                    <p class="text-gray-400 mb-4">大阪市内の高級時計買取専門店</p>
+                    <div class="text-gray-400">
+                        <p>〒530-0001</p>
+                        <p>大阪府大阪市北区梅田X-X-X</p>
+                        <p>○○ビル 5階</p>
+                        <p class="mt-2">TEL: 0120-XXX-XXX</p>
+                        <p>Email: info@watch3.example.com</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg mb-4 border-b border-gray-800 pb-2">買取対象ブランド</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>ロレックス</li>
+                        <li>パテックフィリップ</li>
+                        <li>オーデマピゲ</li>
+                        <li>ヴァシュロン・コンスタンタン</li>
+                        <li>ランゲ&ゾーネ</li>
+                        <li>ブレゲ</li>
+                        <li>その他高級ブランド</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg mb-4 border-b border-gray-800 pb-2">サービス</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>店頭買取</li>
+                        <li>出張買取</li>
+                        <li>宅配買取</li>
+                        <li>法人買取</li>
+                        <li>遺品買取</li>
+                        <li>海外高級時計買取</li>
+                        <li>アンティーク時計買取</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg mb-4 border-b border-gray-800 pb-2">会社情報</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>会社概要</li>
+                        <li>アクセス</li>
+                        <li>プライバシーポリシー</li>
+                        <li>特定商取引法に基づく表記</li>
+                        <li>採用情報</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 watch3 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+            
+            // スムーススクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // フォーム送信イベント (ダミー)
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('査定依頼を受け付けました。担当者より折り返しご連絡いたします。');
+                    form.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
